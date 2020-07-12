@@ -25,7 +25,7 @@ task :import_csv do
 end
 
 def create_object(row, file_name)
-
+  
 end
 
 def create_invoice(row)
