@@ -1,8 +1,7 @@
 require 'csv'
-require 'pry'
+
 desc 'Seed database with data imported from csv files'
 task :import_csv do
-  # Clear Dev database
   Rake::Task["db:reset"].invoke
   Rake::Task["db:migrate"].invoke
 
@@ -13,7 +12,6 @@ task :import_csv do
   # file_names = Dir.children("../rails_engine/lib/seeds")
     file_names = ["merchants.csv", "items.csv", "customers.csv", "invoices.csv", "invoice_items.csv", "transactions.csv"]
 
-  # Load from CSV data
   file_names.each do |file_name|
     csv_text = File.read(Rails.root.join('lib', 'seeds', "#{file_name}"))
     csv = CSV.parse(csv_text, headers: true)
@@ -22,12 +20,6 @@ task :import_csv do
     end
     puts "Imported from #{file_name}"
   end
-
-  # Convert prices cents -> dollars
-
-  # Seed data base
-
-  # Reset primary key sequence for each imported table
 end
 
 def create_object(row, file_name)
