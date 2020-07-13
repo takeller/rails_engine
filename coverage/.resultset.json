@@ -70,12 +70,10 @@
           null,
           1,
           1,
-          null,
-          null,
-          1,
           1,
           null,
           null,
+          1,
           1,
           1,
           null,
@@ -86,6 +84,11 @@
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          0,
           null,
           null,
           1,
@@ -93,6 +96,16 @@
           1,
           2,
           null,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
           null
         ]
       },
@@ -140,6 +153,6 @@
         }
       }
     },
-    "timestamp": 1594674419
+    "timestamp": 1594677149
   }
 }
