@@ -45,7 +45,7 @@ describe 'Merchants API' do
 
     expect(response).to be_successful
     expect(merchant.name).to eq(merchant_params[:name])
-    expect(merchant.name).to_not eq(previous_unit_price)
+    expect(merchant.name).to_not eq(previous_name)
   end
 
   it 'can destroy an merchant' do
