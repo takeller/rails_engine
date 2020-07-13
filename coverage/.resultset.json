@@ -4,7 +4,8 @@
       "/Users/taylor/turing/mod3/projects/rails_engine/app/models/customer.rb": {
         "lines": [
           1,
-          null,
+          1,
+          1,
           null
         ]
       },
@@ -15,31 +16,45 @@
           null
         ]
       },
-      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/item.rb": {
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/invoice_item.rb": {
         "lines": [
           1,
-          null,
+          1,
+          1,
           null
         ]
       },
       "/Users/taylor/turing/mod3/projects/rails_engine/app/models/invoice.rb": {
         "lines": [
           1,
-          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
       "/Users/taylor/turing/mod3/projects/rails_engine/app/models/merchant.rb": {
         "lines": [
           1,
-          null,
+          1,
+          1,
+          1,
           null
         ]
       },
       "/Users/taylor/turing/mod3/projects/rails_engine/app/models/transaction.rb": {
         "lines": [
           1,
-          null,
+          1,
           null
         ]
       },
@@ -48,15 +63,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/invoice_item.rb": {
-        "lines": [
-          0,
-          null,
           0
         ],
         "branches": {
@@ -104,6 +110,6 @@
         }
       }
     },
-    "timestamp": 1594671071
+    "timestamp": 1594671631
   }
 }
