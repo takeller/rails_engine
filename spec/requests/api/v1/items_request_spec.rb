@@ -49,4 +49,13 @@ describe 'Items API' do
     expect(item.unit_price).to eq(item_params[:unit_price])
     expect(item.unit_price).to_not eq(previous_unit_price)
   end
+
+  it 'can destroy an item' do
+    item = create(:item)
+
+    expect{ delete "/api/v1/items/#{item.id}" }.to change(Item, :count).by(-1)
+
+    expect(response).to be_successful
+    expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
 end
