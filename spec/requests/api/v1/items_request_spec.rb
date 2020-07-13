@@ -36,4 +36,17 @@ describe 'Items API' do
     expect(item.description).to eq(item_params[:description])
     expect(item.unit_price).to eq(item_params[:unit_price])
   end
+
+  it 'can update an item' do
+    id = create(:item).id
+    previous_unit_price = Item.last.unit_price
+    item_params = { unit_price: 30.25 }
+
+    put "/api/v1/items/#{id}", params: {item: item_params}
+    item = Item.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(item.unit_price).to eq(item_params[:unit_price])
+    expect(item.unit_price).to_not eq(previous_unit_price)
+  end
 end
