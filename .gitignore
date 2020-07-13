@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-coverage
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -28,3 +28,4 @@ coverage
 /config/master.key
 
 # Ignore SimpleCov coverage
+/coverage
