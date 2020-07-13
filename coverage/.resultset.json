@@ -115,6 +115,45 @@
           null
         ]
       },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/taylor/turing/mod3/projects/rails_engine/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -159,6 +198,6 @@
         }
       }
     },
-    "timestamp": 1594680764
+    "timestamp": 1594681016
   }
 }
