@@ -23,4 +23,17 @@ describe 'Items API' do
     expect(response).to be_successful
     expect(item['id']).to eq(id)
   end
+
+  it 'can create a new item' do
+    merchant = create(:merchant)
+    item_params = { name: "Earth Scroll", description: "Learn the way of stone", unit_price: 27.50, merchant_id: merchant.id}
+
+    post '/api/v1/items', params: {item: item_params}
+    item = Item.last
+
+    expect(response).to be_successful
+    expect(item.name).to eq(item_params[:name])
+    expect(item.description).to eq(item_params[:description])
+    expect(item.unit_price).to eq(item_params[:unit_price])
+  end
 end
