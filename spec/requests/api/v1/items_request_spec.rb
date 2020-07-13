@@ -28,7 +28,7 @@ describe 'Items API' do
     merchant = create(:merchant)
     item_params = { name: "Earth Scroll", description: "Learn the way of stone", unit_price: 27.50, merchant_id: merchant.id}
 
-    post '/api/v1/items', params: {item: item_params}
+    post '/api/v1/items', params: item_params
     item = Item.last
 
     expect(response).to be_successful
@@ -42,7 +42,7 @@ describe 'Items API' do
     previous_unit_price = Item.last.unit_price
     item_params = { unit_price: 30.25 }
 
-    put "/api/v1/items/#{id}", params: {item: item_params}
+    put "/api/v1/items/#{id}", params: item_params
     item = Item.find_by(id: id)
 
     expect(response).to be_successful
