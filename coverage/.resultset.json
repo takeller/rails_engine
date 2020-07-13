@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/customer.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/item.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/invoice.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/transaction.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/models/invoice_item.rb": {
+        "lines": [
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/taylor/turing/mod3/projects/rails_engine/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1594671071
+  }
+}
