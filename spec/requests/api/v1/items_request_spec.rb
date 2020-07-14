@@ -70,9 +70,9 @@ describe 'Items API' do
 
     get "/api/v1/items/#{item.id}/merchant"
 
-    response_merchant = JSON.parse(response.body)
-    
+    response_merchant = JSON.parse(response.body)['data']
+
     expect(response).to be_successful
-    expect(response_merchant).to eq(merchant.name)
+    expect(response_merchant['attributes']['name']).to eq(merchant.name)
   end
 end
