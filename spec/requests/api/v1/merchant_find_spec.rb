@@ -11,8 +11,7 @@ describe 'Merchants API' do
 
     merchant = JSON.parse(response.body)
 
-    expect(merchant['data'].count).to eq(1)
-    expect(merchant['data'].first['attributes']['name']).to eq('Aang')
+    expect(merchant['data']['attributes']['name']).to eq('Aang')
   end
 
   it 'Search parameter is case insensitive' do
@@ -25,8 +24,7 @@ describe 'Merchants API' do
 
     merchant = JSON.parse(response.body)
 
-    expect(merchant['data'].count).to eq(1)
-    expect(merchant['data'].first['attributes']['name']).to eq('Aang')
+    expect(merchant['data']['attributes']['name']).to eq('Aang')
   end
 
   it 'Search parameter can be a partial match' do
@@ -39,8 +37,7 @@ describe 'Merchants API' do
 
     merchant = JSON.parse(response.body)
 
-    expect(merchant['data'].count).to eq(1)
-    expect(merchant['data'].first['attributes']['name']).to eq('Aang')
+    expect(merchant['data']['attributes']['name']).to eq('Aang')
   end
 
   it 'Can find a merchant based on multiple criteria' do
@@ -48,12 +45,11 @@ describe 'Merchants API' do
     aang = create(:merchant, name: 'Aang')
 
     get "/api/v1/merchants/find?name=ng&created_at=#{aang.created_at}"
-    
+
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body)
 
-    expect(merchant['data'].count).to eq(1)
-    expect(merchant['data'].first['attributes']['name']).to eq('Aang')
+    expect(merchant['data']['attributes']['name']).to eq('Aang')
   end
 end

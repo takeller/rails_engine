@@ -13,7 +13,7 @@ describe Merchant, type: :model do
 
       merchant = Merchant.find_by_attribute({name: 'Sakka'})
 
-      expect(merchant.first.name).to eq('Sakka')
+      expect(merchant.name).to eq('Sakka')
     end
   end
 end
