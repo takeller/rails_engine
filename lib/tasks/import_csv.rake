@@ -9,6 +9,7 @@ task :import_csv do
     ActiveRecord::Base.connection.reset_pk_sequence!(t)
   end
 
+  ActiveRecord::Base.record_timestamps = false
   # file_names = Dir.children("../rails_engine/lib/seeds")
     file_names = ["merchants.csv", "items.csv", "customers.csv", "invoices.csv", "invoice_items.csv", "transactions.csv"]
 
@@ -20,6 +21,8 @@ task :import_csv do
     end
     puts "Imported from #{file_name}"
   end
+
+  ActiveRecord::Base.record_timestamps = true
 end
 
 def create_object(row, file_name)
@@ -45,8 +48,13 @@ def create_invoice(row)
                     customer_id: row['customer_id'],
                     merchant_id: row['merchant_id'],
                     status: row['status'],
+                    created_at: row['created_at'],
+                    updated_at: row['updated_at']
                   }
                 )
+
+  # Invoice.last.created_at = row['created_at']
+  # Invoice.last.updated_at = row['updated_at']
 end
 
 def create_invoice_item(row)
@@ -55,26 +63,38 @@ def create_invoice_item(row)
                           item_id: row['item_id'],
                           invoice_id: row['invoice_id'],
                           quantity: row['quantity'],
-                          unit_price: row['unit_price'].insert(-3, '.')
+                          unit_price: row['unit_price'].insert(-3, '.'),
+                          created_at: row['created_at'],
+                          updated_at: row['updated_at']
                         }
                       )
+  # InvoiceItem.last.created_at = row['created_at']
+  # InvoiceItem.last.updated_at = row['updated_at']
 end
 
 def create_customer(row)
   Customer.create(
                     {
                       first_name: row['first_name'],
-                      last_name: row['last_name']
+                      last_name: row['last_name'],
+                      created_at: row['created_at'],
+                      updated_at: row['updated_at']
                     }
                   )
+  # Customer.last.created_at = row['created_at']
+  # Customer.last.updated_at = row['updated_at']
 end
 
 def create_merchant(row)
   Merchant.create(
                     {
-                      name: row['name']
+                      name: row['name'],
+                      created_at: row['created_at'],
+                      updated_at: row['updated_at']
                     }
                   )
+  # Merchant.last.created_at = row['created_at']
+  # Merchant.last.updated_at = row['updated_at']
 end
 
 def create_transaction(row)
@@ -83,9 +103,13 @@ def create_transaction(row)
                         invoice_id: row['invoice_id'],
                         credit_card_number: row['credit_card_number'],
                         credit_card_expiration_date: row['credit_card_expiration_date'],
-                        result: row['result']
+                        result: row['result'],
+                        created_at: row['created_at'],
+                        updated_at: row['updated_at']
                       }
                     )
+  # Transaction.last.created_at = row['created_at']
+  # Transaction.last.updated_at = row['updated_at']
 end
 
 def create_item(row)
@@ -95,6 +119,10 @@ def create_item(row)
                   description: row['description'],
                   unit_price: row['unit_price'].insert(-3, '.'),
                   merchant_id: row['merchant_id'],
+                  created_at: row['created_at'],
+                  updated_at: row['updated_at']
                 }
               )
+  # Item.last.created_at = row['created_at']
+  # Item.last.updated_at = row['updated_at']
 end
