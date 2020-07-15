@@ -11,7 +11,7 @@ describe Merchant, type: :model do
       create_list(:merchant, 3)
       create(:merchant, name: 'Sakka')
 
-      merchant = Merchant.find_by_attribute({name: 'Sakka'})
+      merchant = Merchant.find_by_attribute({name: 'Sakka'}).first
 
       expect(merchant.name).to eq('Sakka')
     end

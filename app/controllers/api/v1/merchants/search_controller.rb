@@ -1,7 +1,12 @@
 class Api::V1::Merchants::SearchController < ApplicationController
 
-  def show
+  def index
     merchant = Merchant.find_by_attribute(search_params)
+    render json: MerchantSerializer.new(merchant)
+  end
+
+  def show
+    merchant = Merchant.find_by_attribute(search_params).first
     render json: MerchantSerializer.new(merchant)
   end
 
