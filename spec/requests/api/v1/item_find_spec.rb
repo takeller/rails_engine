@@ -12,7 +12,7 @@ describe 'Items API' do
 
     expect(response).to be_successful
 
-    item = JSON.pase(response.body)
+    item = JSON.parse(response.body)
 
     expect(item['data']['attributes']['name']).to eq(item1.name)
 
@@ -20,7 +20,7 @@ describe 'Items API' do
 
     expect(response).to be_successful
 
-    item = JSON.pase(response.body)
+    item = JSON.parse(response.body)
 
     expect(item['data']['attributes']['description']).to eq(item2.description)
 
@@ -28,7 +28,7 @@ describe 'Items API' do
 
     expect(response).to be_successful
 
-    item = JSON.pase(response.body)
+    item = JSON.parse(response.body)
 
     expect(item['data']['attributes']['description']).to eq(item2.description)
   end
@@ -41,7 +41,7 @@ describe 'Items API' do
 
     expect(response).to be_successful
 
-    item = JSON.pase(response.body)
+    item = JSON.parse(response.body)
 
     expect(item['data']['attributes']['name']).to eq(item1.name)
   end
@@ -54,7 +54,7 @@ describe 'Items API' do
 
     expect(response).to be_successful
 
-    item = JSON.pase(response.body)
+    item = JSON.parse(response.body)
 
     expect(item['data']['attributes']['name']).to eq(item1.name)
   end
@@ -67,7 +67,7 @@ describe 'Items API' do
 
     expect(response).to be_successful
 
-    item = JSON.pase(response.body)
+    item = JSON.parse(response.body)
 
     expect(item['data']['attributes']['name']).to eq(item1.name)
   end
