@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 describe 'Items API' do
-  it 'Can find an Item' do
+  it 'Can find an Item by name' do
     # name, description, price, timestamps
     create_list(:item, 5)
-    item1= create(:item, name: "Black Pen")
-    item2 = create(:item, description: "You can write with it")
-    item3 = create(:item, unit_price: 25.0)
+    test_item= create(:item, name: "Black Pen")
 
     get '/api/v1/items/find?name=Black+Pen'
 
@@ -14,7 +12,12 @@ describe 'Items API' do
 
     item = JSON.parse(response.body)
 
-    expect(item['data']['attributes']['name']).to eq(item1.name)
+    expect(item['data']['attributes']['name']).to eq(test_item.name)
+  end
+
+  it 'Can find an Item by description' do
+    create_list(:item, 5)
+    test_item = create(:item, description: "You can write with it")
 
     get '/api/v1/items/find?description=You+can+write+with+it'
 
@@ -22,15 +25,20 @@ describe 'Items API' do
 
     item = JSON.parse(response.body)
 
-    expect(item['data']['attributes']['description']).to eq(item2.description)
+    expect(item['data']['attributes']['description']).to eq(test_item.description)
+  end
 
-    get '/api/v1/items/find?unit_price=25.0'
+  it 'Can find an item by unit price' do
+    create_list(:item, 5)
+    test_item = create(:item, unit_price: 275.0)
+
+    get '/api/v1/items/find?unit_price=275.0'
 
     expect(response).to be_successful
 
     item = JSON.parse(response.body)
 
-    expect(item['data']['attributes']['description']).to eq(item2.description)
+    expect(item['data']['attributes']['unit_price']).to eq(test_item.unit_price)
   end
 
   it 'Search parameter is case insesnsitive' do
