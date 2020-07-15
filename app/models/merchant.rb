@@ -28,13 +28,21 @@ class Merchant < ApplicationRecord
     .limit(quantity)
   end
 
-  def total_revenue
+  def self.revenue_across_dates(start_date, end_date)
+    select("SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
+    .joins(invoices: [ :invoice_items, :transactions ])
+    .merge(Transaction.successful)
+    .where("invoices.created_at >= ?  and invoices.created_at < ?", "#{start_date}", "#{end_date}")
+  end
+
+  def total_revenue(merch_id)
      select("SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
      .joins(invoices: [ :invoice_items, :transactions ])
      .merge(Transaction.successful)
-     .where("merchants.id = 2")
+     .where("merchants.id = #{merch_id}")
      .group(:id)
   end
+
 end
 
 # .where(transactions: { result: "success" })
