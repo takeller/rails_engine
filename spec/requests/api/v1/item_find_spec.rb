@@ -6,7 +6,7 @@ describe 'Items API' do
     create_list(:item, 5)
     item1= create(:item, name: "Black Pen")
     item2 = create(:item, description: "You can write with it")
-    item3 = create(:item, unit_price = 25.0)
+    item3 = create(:item, unit_price: 25.0)
 
     get '/api/v1/items/find?name=Black+Pen'
 
