@@ -8,6 +8,6 @@ class Invoice < ApplicationRecord
     select("SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
     .joins(:invoice_items, :transactions)
     .merge(Transaction.successful)
-    .where("invoices.created_at >= ?  and invoices.created_at <= ?", "#{start_date}", "#{end_date}")[0]
+    .where("invoices.created_at >= ? and invoices.created_at <= ?", "#{start_date}", "#{end_date}")[0]
   end
 end

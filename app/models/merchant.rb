@@ -27,12 +27,10 @@ class Merchant < ApplicationRecord
     .limit(quantity)
   end
 
-  def total_revenue(merch_id)
-     select("SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
-     .joins(invoices: [ :invoice_items, :transactions ])
-     .merge(Transaction.successful)
-     .where("merchants.id = #{merch_id}")
-     .group(:id)
+  def total_revenue
+      invoices
+      .joins(:transactions, :invoice_items)
+      .merge(Transaction.successful)
+      .sum('invoice_items.quantity * invoice_items.unit_price')
   end
-
 end
