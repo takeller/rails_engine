@@ -79,4 +79,18 @@ describe 'Items API' do
 
     expect(item['data']['attributes']['name']).to eq(item1.name)
   end
+
+  it 'Can find multiple items' do
+    create_list(:item, 10)
+    fire_item1 = create(:item, name: 'Fire Nation Sword')
+    fire_item2 = create(:item, name: 'Fire Nation Tea')
+
+    get '/api/v1/items/find_all?name=fire'
+
+    items = JSON.parse(response.body)
+
+    expect(response).to be_successful
+    expect(items['data'][0]['attributes']['name']).to eq(fire_item1.name)
+    expect(items['data'][1]['attributes']['name']).to eq(fire_item2.name)
+  end
 end

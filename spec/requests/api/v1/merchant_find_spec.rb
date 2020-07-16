@@ -63,7 +63,7 @@ describe 'Merchants API' do
     merchants = JSON.parse(response.body)
 
     expect(response).to be_successful
-    expect(merchants['data'][0]['attributes']['name']).to eq('Fire Nation Shop')
-    expect(merchants['data'][1]['attributes']['name']).to eq('Fire Nation Tea')
+    expect(merchants['data'][0]['attributes']['name']).to eq(fire_merch1.name)
+    expect(merchants['data'][1]['attributes']['name']).to eq(fire_merch2.name)
   end
 end
