@@ -52,4 +52,18 @@ describe 'Merchants API' do
 
     expect(merchant['data']['attributes']['name']).to eq('Aang')
   end
+
+  it 'Can find multiple merchants' do
+    create_list(:merchant, 10)
+    fire_merch1 = create(:merchant, name: 'Fire Nation Shop')
+    fire_merch2 = create(:merchant, name: 'Fire Nation Tea')
+
+    get "/api/v1/merchants/find_all?name=fire"
+
+    merchants = JSON.parse(response.body)
+
+    expect(response).to be_successful
+    expect(merchants['data'][0]['attributes']['name']).to eq('Fire Nation Shop')
+    expect(merchants['data'][1]['attributes']['name']).to eq('Fire Nation Tea')
+  end
 end
